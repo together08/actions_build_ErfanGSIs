@@ -42,10 +42,18 @@ jobs:
          run: git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
        
        - name: Setting up erfanGSI requirements
-         run: sudo bash setup.sh
+         run: |
+              cd ErfanGSIs
+              sudo bash setup.sh
        
        - name: Download Stock Rom & Generate GSI
-         run: ./url2GSI.sh $ROM_URL $ROM_NAME
+         run: ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+       
+       - name: Upload GSI 
+         uses: actions/upload-artifact@master
+         with: 
+           name: ErfanGSIs-GSI
+           path: ErfanGSIs/output/*.img
        
        
          
