@@ -1,4 +1,4 @@
-name: build_erfanGSIs
+name: build_ErfanGSIs
 
 on:
 #  release:
@@ -30,15 +30,15 @@ jobs:
        - name: Checkout
          uses: actions/checkout@master
  
-       - name: Initialization environment - Install packages 
+       - name: Initialization environment
          run: |
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install git openjdk-8-jdk
        
-       - name: Clone erfanGSI Source Code
+       - name: Clone ErfanGSI Source Code
          run: git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
        
-       - name: Setting up erfanGSI requirements
+       - name: Setting up ErfanGSI requirements
          run: |
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
