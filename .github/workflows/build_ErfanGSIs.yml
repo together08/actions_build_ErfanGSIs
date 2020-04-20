@@ -16,9 +16,6 @@ on:
 env:
   ROM_URL: https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.O.07_OTA_007_all_1905120542_fc480574576b4843.zip 
   ROM_NAME: OxygenOS
-  SSH_ACTIONS: false
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -29,7 +26,16 @@ jobs:
     steps:
        - name: Checkout
          uses: actions/checkout@master
- 
+       
+       - name: Clean Up
+         run: |
+           docker rmi `docker images -q`
+           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
+           sudo -E apt-get update
+           sudo -E apt-get -y autoremove --purge
+           sudo -E apt-get clean 
+           
        - name: Initialization environment
          run: |
             sudo -E apt-get -qq update
