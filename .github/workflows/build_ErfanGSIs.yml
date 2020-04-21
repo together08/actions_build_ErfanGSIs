@@ -57,7 +57,7 @@ jobs:
          uses: actions/upload-artifact@master
          with: 
            name: ErfanGSIs
-           path: ~/ErfanGSIs/output/
+           path: /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output
        
          
             
