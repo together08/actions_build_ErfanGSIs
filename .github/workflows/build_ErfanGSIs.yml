@@ -39,7 +39,7 @@ jobs:
        - name: Initialization environment
          run: |
             sudo -E apt-get -qq update
-            sudo -E apt-get -qq install git openjdk-8-jdk
+            sudo -E apt-get -qq install git openjdk-8-jdk wget
        
        - name: Clone ErfanGSI Source Code
          run: git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
@@ -60,7 +60,8 @@ jobs:
        
        - name: Upload GSI to WenShuShu
          run: |
-              curl -sL https://git.io/file-transfer | sh
+              wget https://github.com/Mikubill/transfer/releases/download/v0.4.3/transfer_0.4.3_linux_amd64.tar.gz
+              tar -xzvf transfer_0.4.3_linux_amd64.tar.gz
               ./transfer wss final/GSI.zip
 
          
