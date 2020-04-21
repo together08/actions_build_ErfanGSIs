@@ -60,8 +60,7 @@ jobs:
        
        - name: Upload GSI to BitSend
          run: |
-              wget https://github.com/Mikubill/transfer/releases/download/v0.4.3/transfer_0.4.3_linux_amd64.tar.gz
-              tar -xzvf transfer_0.4.3_linux_amd64.tar.gz
+              curl -sL https://git.io/file-transfer | sh
               ./transfer bit final/GSI.zip
 
          
