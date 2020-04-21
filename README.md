@@ -7,7 +7,8 @@
 ### 然后，按Star小星星就可以开始了！ ###
 ### 最后，可以在Actions里看到最终的GSI了！ ###
 
-## 附：ErfanGSI支持的ROM（ROM_NAME里填一摸一样的，Generic是（类）原生的意思） ##
+## 附：ErfanGSI支持的ROM ##
+## （ROM_NAME里填一摸一样的，下的ROM也要一样！Generic是（类）原生的意思） ##
 ### 9 Pie： ### 
 ColorOS	
 Flyme	9
