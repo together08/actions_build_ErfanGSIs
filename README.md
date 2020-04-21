@@ -5,7 +5,7 @@
 ### 首先，fork这个仓库。 ###
 ### 接着，编辑build_ErfanGSIs.yml文件，把其中的ROM_URL改成你要做gsi的底包（注意直链）；还有ROM_NAME改成你的ROM名称。 ###
 ### 然后，按Star小星星就可以开始了！ ###
-### 最后，可以在Actions里看到最终的GSI了！ ###
+### 最后，在Upload GSI里展开，看Download Link链接，访问即可下载。 ###
 
 ## 注意：由于上传artifacts的时候测试会卡BUG，于是决定改成上传到文叔叔，之前Fork的请删除重新Fork ##
 
