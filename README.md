@@ -13,7 +13,7 @@
 ## （ROM_NAME里填一摸一样的，下的ROM也要一样！Generic是（类）原生的意思） ##
 ### 9 Pie： ### 
 ColorOS	
-Flyme	9
+Flyme
 Generic
 MIUI	
 Moto	
