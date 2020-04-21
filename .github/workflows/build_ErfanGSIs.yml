@@ -58,11 +58,11 @@ jobs:
               mkdir final
               zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
        
-       - name: Upload GSI to WenShuShu
+       - name: Upload GSI to BitSend
          run: |
               wget https://github.com/Mikubill/transfer/releases/download/v0.4.3/transfer_0.4.3_linux_amd64.tar.gz
               tar -xzvf transfer_0.4.3_linux_amd64.tar.gz
-              ./transfer wss final/GSI.zip
+              ./transfer bit final/GSI.zip
 
          
             
