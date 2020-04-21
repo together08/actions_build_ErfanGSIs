@@ -58,10 +58,10 @@ jobs:
               mkdir final
               zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
        
-       - name: Upload GSI  
-         uses: actions/upload-artifact@master
-         with: 
-           name: ErfanGSIs
-           path: final/GSI.zip
+       - name: Upload GSI to WenShuShu
+         run: |
+              curl -sL https://git.io/file-transfer | sh
+              ./transfer wss final/GSI.zip
+
          
             
