@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.O.07_OTA_007_all_1905120542_fc480574576b4843.zip 
-  ROM_NAME: OxygenOS
+  ROM_URL: http://romdownload.nubia.com/%E7%BA%A2%E9%AD%94Mars/V2.38/NX619J-update.zip
+  ROM_NAME: Nubia
   TZ: Asia/Shanghai
 
 jobs:
