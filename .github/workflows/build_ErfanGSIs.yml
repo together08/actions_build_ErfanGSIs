@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://dlsvr04.asus.com.cn/pub/ASUS/ZenFone/ZS620KL/UL-Z01R-WW-90.11.162.111-user.zip
-  ROM_NAME: ZenUI
+  ROM_URL: https://bigota.d.miui.com/20.3.26/miui_MI8SE_20.3.26_335c159428_10.0.zip 
+  ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
 jobs:
