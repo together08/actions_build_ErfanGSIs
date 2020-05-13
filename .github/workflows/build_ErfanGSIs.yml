@@ -15,7 +15,7 @@ on:
     
 env:
   ROM_URL: https://dlsvr04.asus.com.cn/pub/ASUS/ZenFone/ZS620KL/UL-Z01R-WW-90.11.162.111-user.zip
-  ROM_NAME: ZenUI
+  ROM_NAME: ZenUI.
   TZ: Asia/Shanghai
 
 jobs:
