@@ -14,4 +14,3 @@ on:
     types: [started]
     
 env:
-  ROM_URL: 
