@@ -12,8 +12,13 @@ cp -f ./.rom_name ./rom_name
 nano ./rom_name
 cat ./rom_name >> ./build_ErfanGSIs.yml
 cat ./.build_ErfanGSIs_part3.yml >> ./build_ErfanGSIs.yml
+rm -f ./r*
 read -p "DO you want to submit this yaml file? (y/N)" SUBMIT
 if [[ "$SUBMIT" == 'y' ]]; then
-    rm -f ./r*
+    cp -f ./build_ErfanGSIs.yml ../.github/workflows/build_ErfanGSIs.yml
+fi
+read -p "DO you want to delete this yaml file? (y/N)" DELETE
+if [[ "$DELETE" == 'y' ]]; then
+    rm -f ./build_ErfanGSIs.yml
     exit 0
 fi
