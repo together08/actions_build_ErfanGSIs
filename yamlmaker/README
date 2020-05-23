@@ -1,0 +1,20 @@
+Yamlmaker of actions_build_ErfanGSIs
+
+This script is made to generate personalized 
+yaml script for using actions_build_ErfanGSIs.
+
+Usage:
+Firstly change your work directory to actions_build_ErfanGSIs.
+Then 
+    $ cd ./yamlmaker
+    $ sudo chmod +x ./yamlmaker.sh
+    $ ./yamlmaker
+And the script runs.
+     
+Why should I use it?
+-- Because Yamlmaker has interactive actions, 
+   user can change the script easier.
+-- And Yamlmaker can reserve user's changed yml
+   files and unchanged yml files.
+-- Yamlmaker leaves options to let user decide 
+   these options.

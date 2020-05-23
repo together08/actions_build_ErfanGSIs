@@ -1,4 +1,6 @@
 #!/bin/bash
+# Yamlmaker of actions_build_ErfanGSIs
+# Copyright (C) 2020, Linuxbckp
 cp -f ./.build_ErfanGSIs_empty.yml ./build_ErfanGSIs.yml
 cat ./.build_ErfanGSIs_part1.yml >> ./build_ErfanGSIs.yml
 # read url
