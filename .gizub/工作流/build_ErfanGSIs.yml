@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://dlsvr04.asus.com.cn/pub/ASUS/ZenFone/ZS620KL/UL-Z01R-WW-90.11.162.111-user.zip
-  ROM_NAME: ZenUI
+  ROM_URL: https://xzz.xiaomin.tech/MIUI%E7%BA%AF%E5%87%80%E5%AE%98%E6%94%B9Rom/20.6.2/Redmi%20K20%20Pro_20.6.2_e33e6cdb_Sodex%20Jerry_10.0.zip
+  ROM_NAME: MIUI for Android 10
   TZ: Asia/Shanghai
 
 jobs:
