@@ -51,7 +51,7 @@ jobs:
               sudo bash setup.sh
               sudo sed -i '7c AB=false' url2GSI.sh
               sudo sed -i '8c Aonly=true' url2GSI.sh
-       
+        
        - name: Download Stock Rom & Generate GSI
          run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME -a
        
