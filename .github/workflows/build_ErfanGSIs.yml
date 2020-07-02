@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://dlsvr04.asus.com.cn/pub/ASUS/ZenFone/ZS620KL/UL-Z01R-WW-90.11.162.111-user.zip
-  ROM_NAME: ZenUI
+  ROM_URL: https://wss-1259372845.file.myqcloud.com/gby4p0o/2/wx/2wx5gby4p0o?cdn_sign=1593696925-15-0-2ea0e1dad3ecdb42d9e7a42efc5e60c2&response-content-disposition=attachment%3B%20filename%3D%22RealmeQ-rooted.zip%22%3B%20filename%2A%3Dutf-8%27%27RealmeQ-rooted.zip
+  ROM_NAME: ColorOS6.1
   TZ: Asia/Shanghai
 
 jobs:
