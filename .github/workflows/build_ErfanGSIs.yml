@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://dlsvr04.asus.com.cn/pub/ASUS/ZenFone/ZS620KL/UL-Z01R-WW-90.11.162.111-user.zip
-  ROM_NAME: ZenUI
+  ROM_URL: https://github.com/together08/actions_build_ErfanGSIs/runs/830804122?check_suite_focus=true
+  ROM_NAME: ColorOS6.1
   TZ: Asia/Shanghai
 
 jobs:
