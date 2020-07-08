@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/9.12.12/miui_VIOLET_9.12.12_7b3b79a7e1_9.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: PAFM00_11_C.24_OTA_1240_all_201912112224.ozip
+  ROM_NAME: ColorOS
   TZ: Asia/Shanghai
 
 jobs:
