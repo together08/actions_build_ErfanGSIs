@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://fsopen.coloros.com/3/oppowww/androidrom/PAFM00P/PAFM00_11_C.24_OTA_1240_all_201912112224.ozip
-  ROM_NAME: ColorOS
+  ROM_URL: http://download.h2os.com/5T/MP/OnePlus5THydrogen_43_OTA_062_all_2005291737_04f9b97b5ae84d67.zip
+  ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
 jobs:
