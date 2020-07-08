@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: PAFM00_11_C.24_OTA_1240_all_201912112224.ozip
+  ROM_URL: https://fsopen.coloros.com/3/oppowww/androidrom/PAFM00P/PAFM00_11_C.24_OTA_1240_all_201912112224.ozip
   ROM_NAME: ColorOS
   TZ: Asia/Shanghai
 
