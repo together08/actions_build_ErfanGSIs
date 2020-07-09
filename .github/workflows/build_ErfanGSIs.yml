@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/V12.0.1.0.QJBCNXM/miui_UMI_V12.0.1.0.QJBCNXM_89345e68d7_10.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: http://download.h2os.com/OnePlus6/MP/OnePlus6Hydrogen_22_OTA_044_all_2004151609_0096a960ae414744.zip
+  ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
 jobs:
