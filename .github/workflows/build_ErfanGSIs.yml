@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/OnePlus6T/MP/OnePlus6THydrogen_34_OTA_044_all_2004151612_8acea2712bfb4699.zip
+  ROM_URL: http://download.h2os.com/OnePlus8Pro/MP/OnePlus8ProHydrogen_15.H.19_OTA_019_all_2005301412_eb61529bbcde48c9.zip
   ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
