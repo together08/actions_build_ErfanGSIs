@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://dlsvr04.asus.com.cn/pub/ASUS/ZenFone/ZS620KL/UL-Z01R-WW-90.11.162.111-user.zip
-  ROM_NAME: ZenUI
+  ROM_URL: https:/ip4088637303.mobgslb.tbcache.com/Firmware/Flyme/16T/8.1.0.0/cn/20200521161057/3ac29e43/update.zip
+  ROM_NAME: Flyme8.1.0.0
   TZ: Asia/Shanghai
 
 jobs:
