@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://hugeota.d.miui.com/20.5.29/miui_CEPHEUS_20.5.29_d531f234ac_10.0.zip
+  ROM_URL: https://hugeota.d.miui.com/20.6.23/miui_TUCANA_20.6.23_11fabbbd07_10.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
