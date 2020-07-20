@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://hugeota.d.miui.com/20.7.16/miui_CEPHEUS_20.7.16_349c1d27a6_10.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: http://romdownload.nubia.com/nubiaX/V3.21/NX616J-update.zip
+  ROM_NAME: Nubia
   TZ: Asia/Shanghai
 
 jobs:
