@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://cloud189-anhui-person.oos-ahwh.ctyunapi.cn/726d95a3-83ba-4dde-a78b-cc12dd15b84f?x-amz-UFID=61541210124234239&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-SHID=169267708&x-amz-FSIZE=2726341408&Expires=1595961100&x-amz-UID=500119206&response-content-disposition=attachment%3Bfilename%3D%22Mi9Pro5G_MIUI12_20.6.11_10.0_BlueHill_4c1f6174e7.zip%22&AWSAccessKeyId=caf5e6901807aca55a45&x-amz-limitrate=10240&x-amz-APPID=828221&x-amz-CLOUDTYPEIN=PERSON&x-amz-CLIENTTYPEIN=UNKNOWN&Signature=1TnGxTpzu7YFIvjnbfBT1WYeYDU%3D
+  ROM_URL: https://cloud189-henan-person.oos-hazz.ctyunapi.cn/bcfaea6d-7e1b-43ed-9552-8b754db7b3ec?x-amz-UFID=2130129568047162&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-SHID=169267708&x-amz-FSIZE=2715319207&Expires=1595961214&x-amz-UID=500119206&response-content-disposition=attachment%3Bfilename%3D%22Mi9Pro5G_MIUI12_20.6.1_10.0_BlueHill_a1b4e53ffa.zip%22&AWSAccessKeyId=532482dfdc85e5d60592&x-amz-limitrate=10240&x-amz-APPID=828221&x-amz-CLOUDTYPEIN=PERSON&x-amz-CLIENTTYPEIN=UNKNOWN&Signature=1Sbs71hReV2fjgB3VHb2AfgL09g%3D
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
