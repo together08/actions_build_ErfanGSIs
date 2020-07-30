@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://cloud189-henan-person.oos-hazz.ctyunapi.cn/730e2015-7fe1-4d44-9a70-90351c566706?x-amz-UFID=8150028845403391&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-SHID=169267708&x-amz-FSIZE=2730443175&Expires=1596029502&x-amz-UID=500119206&response-content-disposition=attachment%3Bfilename%3D%22RedmiK20Pro_MIUI12_20.5.20_10.0_BlueHill_2bf17f9dc6.zip%22&AWSAccessKeyId=532482dfdc85e5d60592&x-amz-limitrate=10240&x-amz-APPID=828221&x-amz-CLOUDTYPEIN=PERSON&x-amz-CLIENTTYPEIN=UNKNOWN&Signature=lImqWEBZl4w9h9SRBZ%2BsAEtdpJc%3D
+  ROM_URL: https://hugeota.d.miui.com/20.7.30/miui_TUCANA_20.7.30_88bd643cc0_10.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
