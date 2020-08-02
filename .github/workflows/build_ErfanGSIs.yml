@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://hugeota.d.miui.com/20.7.30/miui_LAURUS_20.7.30_d42b9e4188_10.0.zip
+  ROM_URL: https://hugeota.d.miui.com/20.6.18/miui_MIMIX2_20.6.18_7235eadecf_9.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
