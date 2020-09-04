@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V11.0.3.0.QEECNXM/miui_MIMIX3_V11.0.3.0.QEECNXM_4d73488207_10.0.zip
+  ROM_URL: https://bigota.d.miui.com/V12.0.2.0.QFXCNXM/miui_CRUX_V12.0.2.0.QFXCNXM_1d03981a42_10.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
