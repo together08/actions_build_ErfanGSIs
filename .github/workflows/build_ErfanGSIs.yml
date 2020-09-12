@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://183.201.201.1/bigota.d.miui.com/V12.0.2.0.QFHCNXM/miui_VIOLET_V12.0.2.0.QFHCNXM_cb92059195_10.0.zip
+  ROM_URL:http://183.201.201.1/bigota.d.miui.com/V12.0.2.0.QFHCNXM/miui_VIOLET_V12.0.2.0.QFHCNXM_cb92059195_10.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
