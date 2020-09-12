@@ -1,4 +1,4 @@
-         name: build_ErfanGSIs
+name: build_ErfanGSIs
 
 on:
 #  release:
@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://183.201.201.1/bigota.d.miui.com/V12.0.2.0.QFHCNXM/miui_VIOLET_V12.0.2.0.QFHCNXM_cb92059195_10.0.zip
+  ROM_URL: 
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
@@ -61,4 +61,4 @@ jobs:
        - name: Upload GSI to BitSend
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer WeTransfer final/GSI.zip
+              ./transfer WeTransfer final/MIUI12GSI.zip
