@@ -61,4 +61,4 @@ jobs:
        - name: Upload GSI to BitSend
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer We Transfer final/MIUI12gsiAB.zip
+              ./transfer We Transfer final/MIUI12gsi.zip
