@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://hugeota.d.miui.com/20.9.17/miui_LAVENDER_20.9.17_c0567a17a1_10.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: http://download.h2os.com/OnePlus7Pro/MP/OnePlus7ProHydrogen_21.H.28_OTA_028_all_2007240037_b03998cd3afb4bb7.zip
+  ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
 jobs:
@@ -58,7 +58,7 @@ jobs:
               mkdir final
               zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
        
-       - name: Upload GSI to BitSend
+       - name: Upload GSI to WeTransfer
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer  Transfer final/MIUI20.9.17GSI.zip
+              ./transfer  wet final/GSI.zip
