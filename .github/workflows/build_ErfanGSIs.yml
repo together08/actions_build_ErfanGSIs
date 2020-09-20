@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/OnePlus7Pro/MP/OnePlus7ProHydrogen_21.H.28_OTA_028_all_2007240037_b03998cd3afb4bb7.zip
+  ROM_URL: http://sysupwrdl.vivo.com.cn/upgrade/official/officialFiles/PD1965_A_1.9.2-update-full_1595211821.zip
   ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
@@ -61,4 +61,4 @@ jobs:
        - name: Upload GSI to WeTransfer
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer  wet final/h2GSI.zip
+              ./transfer  wet final/GSI.zip
