@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V11.0.3.0.QFCRUXM/miui_PYXISRUGlobal_V11.0.3.0.QFCRUXM_c18fb43082_10.0.zip
+  ROM_URL: https://bigota.d.miui.com/V11.0.3.0.QEBCNXM/miui_MI8SE_V11.0.3.0.QEBCNXM_fd6c55042a_10.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
