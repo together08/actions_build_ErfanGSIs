@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/V12.0.2.0.QFHCNXM/miui_VIOLET_V12.0.2.0.QFHCNXM_cb92059195_10.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: http://download.h2os.com/OnePlus7Pro/OBT/OnePlus7ProHydrogen_13.X.43_OTA_043_all_2009072059_508322813d804a6c.zip
+  ROM_NAME: OxygenOS 
   TZ: Asia/Shanghai
 
 jobs:
@@ -61,4 +61,4 @@ jobs:
        - name: Upload GSI to WeTransfer
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer  wet final/MiUIGSI.zip
+              ./transfer  wet final/GSI.zip
