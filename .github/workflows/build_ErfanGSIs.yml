@@ -33,10 +33,6 @@ jobs:
       run: |
         echo "Deleting files, please wait ..."
         docker rmi `docker images -q`
-        sudo rm -rf \
-          /usr/share/dotnet \
-          /etc/mysql \
-          /etc/php
         sudo -E apt-get -y purge \
           azure-cli \
           ghc* \
