@@ -1,4 +1,4 @@
-name: Auto_Build_ErfanGSIs
+name: build_ErfanGSIs
 
 on:
 #  release:
@@ -10,83 +10,56 @@ on:
 #      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
- watch:
-   types: [started]
-   
+  watch:
+    types: [started]
+    
 env:
   ROM_URL: http://download.h2os.com/OnePlus7Pro/OBT/OnePlus7ProHydrogen_13.X.43_OTA_043_all_2009072059_508322813d804a6c.zip
-  ROM_NAME: OxygenOS 
+  ROM_NAME: OxygenOS For Android 10
   TZ: Asia/Shanghai
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-    - name: Check Out
-      uses: actions/checkout@v2
-
-    - name: Initialization Environment
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        echo "Deleting files, please wait ..."
-        docker rmi `docker images -q`
-        sudo -E apt-get -y purge \
-          azure-cli \
-          ghc* \
-          zulu* \
-          hhvm \
-          llvm* \
-          firefox \
-          google* \
-          dotnet* \
-          powershell \
-          openjdk* \
-          mysql* \
-          php*
-        sudo -E apt-get update
-        sudo -E apt-get install git openjdk-8-jdk wget gzip bzip2 tar rar unzip -y
-        sudo -E apt-get autoremove --purge -y
-        sudo -E apt-get clean
-    - name: Clone ErfanGSI Source Code & Zip
-      run: |
-        git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
-        tar -Jcvf ErfanGSIs.tar.xz ErfanGSIs
-        mkdir final
-        cp /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs.tar.xz final/ErfanGSIs.tar.xz
-    - name: Upload ErfanGSI Source Code
-      uses: actions/upload-artifact@v2
-      with:
-        name: ErfanGSI-Source-Code
-        path: final/ErfanGSIs.tar.xz
-        if-no-files-found: error
-
-    - name: Set Up ErfanGSI Requirements
-      run: |
-        sudo chmod -R 777 ErfanGSIs
-        cd ErfanGSIs
-        sudo bash setup.sh
-    - name: Download Stock Rom & Generate GSI
-      run: |
-        sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
-    - name: Zip GSI Images
-      run: |
-       mkdir final
-       tar -Jcvf final/$ROM_NAME-Aonly.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-Aonly*
-       tar -Jcvf final/$ROM_NAME-AB.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-AB*
-    - name: Upload Aonly GSI Images
-      uses: actions/upload-artifact@v2
-      with:
-        name: Aonly-Image
-        path: final/*Aonly.xz
-        if-no-files-found: error
-
-    - name: Upload AB GSI Images
-      uses: actions/upload-artifact@v2
-      with:
-        name: AB-Image
-        path: final/*AB.xz
-        if-no-files-found: error
- 
+       - name: Checkout
+         uses: actions/checkout@master
+       
+       - name: Clean Up
+         run: |
+           docker rmi `docker images -q`
+           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
+           sudo -E apt-get update
+           sudo -E apt-get -y autoremove --purge
+           sudo -E apt-get clean 
+           
+       - name: Initialization environment
+         run: |
+            sudo -E apt-get -qq update
+            sudo -E apt-get -qq install git openjdk-8-jdk wget
+       
+       - name: Clone Source Code
+         run: git clone --recurse-submodules https://github.com/lukejacksonbristot/ErfanGSIs.git
+       
+       - name: Setting up Fit-GSI requirements
+         run: |
+              sudo chmod -R 777 ErfanGSIs
+              cd ErfanGSIs
+              sudo bash setup.sh
+              sudo sed -i '7c AB=true' url2GSI.sh
+              sudo sed -i '8c Aonly=true' url2GSI.sh
+       - name: Download Stock Rom & Generate A/B GSI
+         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+       
+       - name: Zip GSI  
+         run: |
+              mkdir final
+              zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
+       
+       - name: Upload GSI to WeTransfer
+         run: |
+              curl -sL https://git.io/file-transfer | sh
+              ./transfer wet final/GSI.zip
