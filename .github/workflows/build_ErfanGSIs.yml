@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://download.meizu.com/Firmware/Flyme/16/8.20.9.8/cn_daily/20200908165500/d1679f4d/update.zip
-  ROM_NAME: Flyme For Android 10
+  ROM_URL: http://download.h2os.com/5T/MP/OnePlus5THydrogen_43_OTA_064_all_2009080056_338a836209c54a7e.zip
+  ROM_NAME: OxygenOS For Android 10
   TZ: Asia/Shanghai
 
 jobs:
