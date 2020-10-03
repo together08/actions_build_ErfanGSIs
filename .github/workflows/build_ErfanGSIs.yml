@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/5T/MP/OnePlus5THydrogen_43_OTA_064_all_2009080056_338a836209c54a7e.zip
-  ROM_NAME: OxygenOS For Android 10
+  ROM_URL: http://bigota.d.miui.com/V12.0.4.0.QJCCNXM/miui_LANCELOT_V12.0.4.0.QJCCNXM_c97f5caa5e_10.0.zip
+  ROM_NAME: MIUI For Android 10
   TZ: Asia/Shanghai
 
 jobs:
