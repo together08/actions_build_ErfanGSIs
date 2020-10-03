@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/V12.0.4.0.QJCCNXM/miui_LANCELOT_V12.0.4.0.QJCCNXM_c97f5caa5e_10.0.zip
-  ROM_NAME: MIUI For Android 10
+  ROM_URL: http://sysupwrdl.vivo.com.cn/upgrade/official/officialFiles/PD1730_A_5.12.5-update-full_1600255455.zip
+  ROM_NAME: Pixel For Android 10
   TZ: Asia/Shanghai
 
 jobs:
