@@ -44,7 +44,7 @@ jobs:
        - name: Clone Source Code
          run: git clone --recurse-submodules https://github.com/lukejacksonbristot/ErfanGSIs.git
        
-       - name: Setting up Fit-GSI requirements
+       - name: Setting up GSI requirements
          run: |
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
