@@ -62,4 +62,4 @@ jobs:
        - name: Upload GSI to WeTransfer
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer wet final/GSI.zip
+              ./transfer wet final/GSI-Run-laohan.zip
