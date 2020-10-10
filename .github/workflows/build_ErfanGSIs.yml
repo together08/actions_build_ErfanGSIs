@@ -1,4 +1,4 @@
-name: build_ErfanGSI
+name: build_ErfanGSIs
 
 on:
 #  release:
@@ -44,14 +44,14 @@ jobs:
        - name: Clone Source Code
          run: git clone --recurse-submodules https://github.com/lukejacksonbristot/ErfanGSIs.git
        
-       - name: Setting up GSI requirements
+       - name: Setting up Fit-GSI requirements
          run: |
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
               sudo bash setup.sh
               sudo sed -i '7c AB=true' url2GSI.sh
               sudo sed -i '8c Aonly=true' url2GSI.sh
-       - name: Download Rom & Generate AB GSI
+       - name: Download Stock Rom & Generate A/B GSI
          run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
        
        - name: Zip GSI  
