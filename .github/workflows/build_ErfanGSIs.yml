@@ -15,7 +15,7 @@ on:
     
 env:
   ROM_URL: http://fs.oppo.com/3/oppowww/androidrom/pcam00/PCAM00_11_OTA_0230_all_DIAhxKX7oFoM.ozi
-  ROM_NAME: Coloros For Android 9
+  ROM_NAME: Color For Android 9
   TZ: Asia/Shanghai
 
 jobs:
