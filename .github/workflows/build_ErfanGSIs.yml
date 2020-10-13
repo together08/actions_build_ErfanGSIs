@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://miui.bluedt.cn/show/%E5%9B%BD%E5%86%85%E7%A8%B3%E5%AE%9A%E7%89%88%28%E6%9C%80%E6%96%B0%E7%89%88%29/RedmiK20Pro_MIUI12_V12.0.3.0_10.0_BlueHill_fac4d07318.zip
-  ROM_NAME: MIUI For Android 10
+  ROM_URL: http://fs.oppo.com/3/oppowww/androidrom/pcam00/PCAM00_11_OTA_0230_all_DIAhxKX7oFoM.ozi
+  ROM_NAME: Coloros For Android 9
   TZ: Asia/Shanghai
 
 jobs:
