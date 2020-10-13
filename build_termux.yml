@@ -1,0 +1,105 @@
+name: Auto Build Termux App
+on: 
+   workflow_dispatch:
+     branches: [ master ]
+   repository_dispatch:
+    types: start auto build Termux
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Clone repository
+      run: git clone https://github.com/termux/termux-app termux_app
+    - name: Check version
+      run: |
+        remote_version=$(cat termux_app/app/build.gradle |grep "versionName \"" |awk -F "\"" '{print $2}')
+        local_version=$(cat version.json |jq -r .app)
+        echo "已编译版本--$local_version"
+        echo "官方最新版本--$remote_version"
+        if [ "$local_version" == "$remote_version" ];then
+                printf "无最新版本!\n\n"
+                exit 1;
+        fi
+        echo "zt=$?" >> $GITHUB_ENV
+        echo "remote_version=$remote_version" >> $GITHUB_ENV
+        echo "local_version=$local_version" >> $GITHUB_ENV
+    - name: Build
+      run: |
+        ###
+        cd termux_app
+        rep(){ sed -i "s/$1/$2/g" $3 ;}
+        str="app/src/main/res/values-zh-rCN/strings.xml"
+        str2="terminal-view/src/main/res/values-zh-rCN/strings.xml"
+        cp -r app/src/main/res/values app/src/main/res/values-zh-rCN
+        cp -r terminal-view/src/main/res/values terminal-view/src/main/res/values-zh-rCN
+        rep "↹" "TAB" app/src/main/java/com/termux/app/ExtraKeysInfos.java
+        rep "ESC, TAB, CTRL, ALT, {key: '-', popup: '|'}, DOWN, UP" "ESC, {key: '-', popup: '|'}, {key: '\/', popup: '\\\\\\\\\\\\\\\\'}, HOME, UP, END, PGUP],[TAB, CTRL, ALT, LEFT, DOWN, RIGHT, PGDN" app/src/main/java/com/termux/app/TermuxPreferences.java
+        rep "Copy" "复制" $str2
+        rep "Paste" "粘贴" $str2
+        rep "More" "更多" $str2
+        rep "Abort" "中止" $str
+        rep "Termux can only be installed on the primary user account." "Termux只能安装在主用户帐户." $str
+        rep "Termux was unable to install the bootstrap packages." "Termux无法安装引导程序包." $str
+        rep "Check your network connection and try again." "检查您的网络连接，然后再试一次." $str
+        rep "Unable to install" "无法安装" $str
+        rep "Try again" "再试一次" $str
+        rep "Installing…" "安装中..." $str
+        rep "Really kill this session?" "确定杀死这个会话吗？" $str
+        rep "Edit" "编辑" $str
+        rep "Open folder" "打开文件夹" $str
+        rep "Save file in ~\/downloads\/" "保存文件到 ~\/downloads\/" $str
+        rep "Help" "帮助" $str
+        rep "Kill process (%d)" "杀死会话 (%d)" $str
+        rep "Close down existing ones before creating new." "在创建新的之前关闭现有的." $str
+        rep "Max terminals reached" "终端到达最大数量了" $str
+        rep "New session" "新建会话" $str
+        rep "Failsafe" "新建系统会话" $str
+        rep "Exit" "退出" $str
+        rep "Acquire wakelock" "开启唤醒锁" $str
+        rep "Release wakelock" "关闭唤醒锁" $str
+        rep "Reset" "重置" $str
+        rep "Terminal reset." "重置终端" $str
+        rep "Share transcript" "分享日志" $str
+        rep "Select URL" "选择链接" $str
+        rep "URL copied to clipboard" "URL复制到剪贴板" $str
+        rep "Click URL to copy or long press to open" "点击链接复制或长按打开" $str
+        rep "No URL found in the terminal." "在终端中找不到URL。" $str
+        rep "Create" "创建" $str
+        rep "New named session" "新命名的会话" $str
+        rep "Set session name" "设置会话名" $str
+        rep "Set" "设置" $str
+        rep "Send text to:" "发送文本至:" $str
+        rep "Terminal transcript" "终端日志" $str
+        rep "Termux user" "Termux用户" $str
+        rep "Install" "安装" $str
+        rep "The Termux:Style add-on is not installed." "Termux:Style插件没有安装." $str
+        rep "Style" "风格" $str
+        rep "Keep screen on" "保持屏幕常亮" $str
+        rep "Keyboard" "键盘" $str
+        printf "修改完成----\n"
+    - name: Build
+      run: |
+        printf "开始编译\n"
+        cd termux_app
+        ./gradlew assembleDebug
+        cp app/build/outputs/apk/debug/app-debug.apk ../Termux_app_${remote_version}.apk
+    - name: Change local version
+      run: |
+          sed -i "s/.*app.*/\"app\":\"${remote_version}\",/g" version.json
+          git config --global user.email "zfuns@qq.com"
+          git config --global user.name "zfuns"
+          git add version.json
+          git commit -m "update"
+          git push
+    - name: Upload Apk To Lzy
+      if: env.zt == 0
+      run: |
+        ${{secrets.LZY_UPDATE}}
+        up_lzy Termux_app_*.apk
+    - name: Store generated APK file
+      if: env.zt == 0
+      uses: actions/upload-artifact@v1
+      with:
+        name: termux-app
+        path: ./termux_app/app/build/outputs/apk/debug/app-debug.apk
