@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://fs.oppo.com/3/oppowww/androidrom/pcam00/PCAM00_11_OTA_0230_all_DIAhxKX7oFoM.ozi
-  ROM_NAME: Color For Android 9
+  ROM_URL: http://bigota.d.miui.com/V12.0.2.0.QCOCNXM/miui_GINKGO_V12.0.2.0.QCOCNXM_fad5afbf68_10.0.zip
+  ROM_NAME: MIUI For Android 10
   TZ: Asia/Shanghai
 
 jobs:
