@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/OnePlus8Pro/OBT/OnePlus8ProHydrogen_15_OTA_0120_all_2009181222_a853711a0aec4c38.zip
-  ROM_NAME: Pixel for Android 11
+  ROM_URL: https://miui.bluedt.cn/show/%E5%9B%BD%E5%86%85%E7%A8%B3%E5%AE%9A%E7%89%88%28%E6%9C%80%E6%96%B0%E7%89%88%29/MI8SE_MIUI12_V12.0.2.0_10.0_BlueHill_6a7767bdb5.zip
+  ROM_NAME: MIUI for Android 10
   TZ: Asia/Shanghai
 
 jobs:
@@ -42,24 +42,24 @@ jobs:
             sudo -E apt-get -qq install git openjdk-8-jdk wget
        
        - name: Clone Source Code
-         run: git clone --recurse-submodules https://github.com/lukejacksonbristot/ErfanGSIs.git
+         run: git clone --recurse-submodules https://github.com/laohan233/ErfanGSIs.git
        
-       - name: Setting up Fit-GSI requirements
+       - name: Setting up ErfanGSI requirements
          run: |
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
               sudo bash setup.sh
               sudo sed -i '7c AB=true' url2GSI.sh
-              sudo sed -i '8c Aonly=true' url2GSI.sh
-       - name: Download Stock Rom & Generate A/B GSI
+              sudo sed -i '8c Aonly=false' url2GSI.sh
+       - name: Download Rom/下载ROM & Generate A/B GSI/制作A/B Erfangsi
          run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
        
-       - name: Zip GSI  
+       - name: Zip GSI /打包GSI
          run: |
               mkdir final
               zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
        
-       - name: Upload GSI to WeTransfer
+       - name: Upload GSI to WeTransfer/下载地址为WeTransfer
          run: |
               curl -sL https://git.io/file-transfer | sh
               ./transfer wet final/GSI.zip
