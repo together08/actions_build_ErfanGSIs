@@ -15,7 +15,7 @@ on:
     
 env:
   ROM_URL: https://kamiui.ml/E51partition2/%E2%98%86%E5%88%B7%E6%9C%BA%E5%8C%85/%23GSI%EF%BC%88%E9%80%9A%E5%88%B7%E5%8C%85%EF%BC%89/EMUI%EF%BC%88%E5%8D%8E%E4%B8%BA%EF%BC%89/EMUI-AB-10-20200723-ErfanGSI/EMUI-AB-10-20200723-ErfanGSI.img.xz
-  ROM_NAME: Generic for Android 10
+  ROM_NAME: MIUI for Android 10
   TZ: Asia/Shanghai
 
 jobs:
