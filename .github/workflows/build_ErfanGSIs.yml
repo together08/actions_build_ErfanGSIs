@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://miui.bluedt.cn/show/%E5%9B%BD%E5%86%85%E7%A8%B3%E5%AE%9A%E7%89%88%28%E6%9C%80%E6%96%B0%E7%89%88%29/MI8SE_MIUI12_V12.0.2.0_10.0_BlueHill_6a7767bdb5.zip
+  ROM_URL: https://miui.bluedt.cn/show/%E5%9B%BD%E5%86%85%E7%A8%B3%E5%AE%9A%E7%89%88%28%E6%9C%80%E6%96%B0%E7%89%88%29/MICC9Pro_MIUI12_V12.0.1.0_10.0_BlueHill_c3613f0ac7.zip
   ROM_NAME: MIUI for Android 10
   TZ: Asia/Shanghai
 
