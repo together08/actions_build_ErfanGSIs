@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://kamiui.ml/E51partition2/%E2%98%86%E5%88%B7%E6%9C%BA%E5%8C%85/%23GSI%EF%BC%88%E9%80%9A%E5%88%B7%E5%8C%85%EF%BC%89/EMUI%EF%BC%88%E5%8D%8E%E4%B8%BA%EF%BC%89/EMUI-AB-10-20200723-ErfanGSI/EMUI-AB-10-20200723-ErfanGSI.img.xz
+  ROM_URL: https://miui.bluedt.cn/show/%E5%9B%BD%E5%86%85%E7%A8%B3%E5%AE%9A%E7%89%88%28%E6%9C%80%E6%96%B0%E7%89%88%29/RedmiNote7Pro_MIUI12_V12.0.3.0_10.0_BlueHill_4b75b37471.zip
   ROM_NAME: MIUI for Android 10
   TZ: Asia/Shanghai
 
