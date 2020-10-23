@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://miui.bluedt.cn/show/%E5%9B%BD%E5%86%85%E7%A8%B3%E5%AE%9A%E7%89%88%28%E6%9C%80%E6%96%B0%E7%89%88%29/RedmiNote7Pro_MIUI12_V12.0.3.0_10.0_BlueHill_4b75b37471.zip
-  ROM_NAME: MIUI for Android 10
+  ROM_URL: https://dl.google.com/dl/android/aosp/flame-rp1a.200720.009-factory-1c9d4fcf.zip
+  ROM_NAME: Pixel for Android 11
   TZ: Asia/Shanghai
 
 jobs:
