@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V11.0.3.0.QEECNXM/miui_MIMIX3_V11.0.3.0.QEECNXM_4d73488207_10.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: https://drive.google.com/uc?id=1-43Bgng_OhpbEWxjrL-j_8Appgc4Cvzp%2Fview%3Fauthuser%3D0&export=download&authuser=0
+  ROM_NAME: Generic
   TZ: Asia/Shanghai
 
 jobs:
