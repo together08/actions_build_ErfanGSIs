@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/5T/MP/OnePlus5THydrogen_43_OTA_064_all_2009080056_338a836209c54a7e.zip
-  ROM_NAME: OxygenOS
+  ROM_URL: https://download.meizu.com/Firmware/Flyme/16s_Pro/8.20.12.8/cn_daily/20201208002119/cec7dd7e/update.zip 
+  ROM_NAME: Flyme
   TZ: Asia/Shanghai
 
 jobs:
