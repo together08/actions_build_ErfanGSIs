@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://firmware.meizu.com/Firmware/Flyme/16xs/8.1.5.0/cn/20200911100700/08868cc1/update.zip
+  ROM_URL: https://firmware.meizu.com/Firmware/Flyme/meizu17_Pro/8.1.2.4/cn/20200908205339/d4cc2a1c/update.zip
   ROM_NAME: Flyme
   TZ: Asia/Shanghai
 
@@ -49,6 +49,8 @@ jobs:
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
               sudo bash setup.sh
+              sudo sed -i '7c AB=true' url2GSI.sh
+              sudo sed -i '8c Aonly=false' url2GSI.sh
        
        - name: Download Stock Rom & Generate GSI
          run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
