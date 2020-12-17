@@ -14,8 +14,9 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/5T/MP/OnePlus5THydrogen_43_OTA_064_all_2009080056_338a836209c54a7e.zip
-  ROM_NAME: OxygenOS
+  ROM_URL: http://sourceforge.net/SAMSUNGGalaxys9＋rr_star2qltechn-userdebug 10 QQ3A.200905.001 eng.alexsa.20200920.165347 test-keys
+  ROM_NAME: Flyme
+  ROM_NAME: 
   TZ: Asia/Shanghai
 
 jobs:
