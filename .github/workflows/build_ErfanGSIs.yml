@@ -16,7 +16,6 @@ on:
 env:
   ROM_URL: https://coloroswebsitefs.coloros.com/coloroswebsite-coloros-com/grs_20201104195555/PDHM00_11_OTA_0250_all_iyi66E9mjnZC.ozip
   ROM_NAME: coloros
-  TZ: Asia/Shanghai
 
 jobs:
   build:
