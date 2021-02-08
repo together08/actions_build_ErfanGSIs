@@ -12,11 +12,9 @@ on:
 #    - cron: 0 8 * * 5
   watch:
     types: [started]
-    
 env:
-  ROM_URL: http://download.h2os.com/5T/MP/OnePlus5THydrogen_43_OTA_064_all_2009080056_338a836209c54a7e.zip
-  ROM_NAME: OxygenOS
-  TZ: Asia/Shanghai
+  ROM_URL: https://coloroswebsitefs.coloros.com/coloroswebsite-coloros-com/grs_20201104195555/PDHM00_11_OTA_0250_all_iyi66E9mjnZC.ozip
+  ROM_NAME: coloros
 
 jobs:
   build:
