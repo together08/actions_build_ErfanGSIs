@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V12.2.9.0.RJBCNXM/miui_UMI_V12.2.9.0.RJBCNXM_164903d5c1_11.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: http://download.h2os.com/5T/MP/OnePlus5THydrogen_43_OTA_064_all_2009080056_338a836209c54a7e.zip
+  ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
 jobs:
