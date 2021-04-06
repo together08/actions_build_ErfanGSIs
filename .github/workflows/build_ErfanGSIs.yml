@@ -36,7 +36,7 @@ jobs:
          
        - name: Fix exit
          run: |
-              sed -i '!|| exit 1!!g' $GITHUB_WORKSPACE/ErfanGSIs
+              sed -i '!\|\| exit 1!!g' $GITHUB_WORKSPACE/ErfanGSIs
               sed -i '!exit 1!!g' $GITHUB_WORKSPACE/ErfanGSIs
        
        - name: Setting up ErfanGSI requirements
