@@ -33,10 +33,14 @@ jobs:
        
        - name: Clone ErfanGSI Source Code
          run: git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git ErfanGSIs
+         
+       - name: Fix exit
+         run: |
+              sed -i '!|| exit 1!!g' $GITHUB_WORKSPACE/ErfanGSIs
+              sed -i '!exit 1!!g' $GITHUB_WORKSPACE/ErfanGSIs
        
        - name: Setting up ErfanGSI requirements
          run: |
-              sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
               mkdir ./output
               sudo bash setup.sh
