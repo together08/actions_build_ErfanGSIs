@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/20.4.27/miui_MIMIX3_20.4.27_8f7879221b_10.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: https://ip4170088509.mobgslb.tbcache.com/Firmware/Flyme/m6_note/8.0.5.0/cn/20200709154303/b68e83cd/update.zip?ali_redirect_domain=firmware.meizu.com&ali_redirect_ex_ftag=1589b070f449f8e208fcfe24bb2c142c6b0479e47da22b15&ali_redirect_ex_tmining_ts=1618904652&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=100
+  ROM_NAME: Flyme
   TZ: Asia/Shanghai
 
 jobs:
@@ -58,7 +58,7 @@ jobs:
          run: |
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
               curl -sL https://git.io/file-transfer | sh
-              ./transfer wet ./final/GSI.zip
+              ./transfer gof ./final/GSI.zip
 
          
             
