@@ -29,7 +29,7 @@ jobs:
            
        - name: Initialization environment
          run: |
-            sudo -E apt-get -qq install git openjdk-8-jdk wget
+            sudo -E apt-get -qq install git wget
        
        - name: Clone ErfanGSI Source Code
          run: git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git ErfanGSIs
@@ -39,10 +39,11 @@ jobs:
               sed -i 's/\|\| exit 1//g' $GITHUB_WORKSPACE/ErfanGSIs/url2GSI.sh
               sed -i 's/exit 1//g' $GITHUB_WORKSPACE/ErfanGSIs/url2GSI.sh
        
-       - name: Setting up ErfanGSI requirements
+       - name: Setting up ErfanGSI requirements with Xiaoxin script
          run: |
               cd ErfanGSIs
               mkdir ./output
+              wget https://raw.githubusercontent.com/TimeMapleLing/actions_build_SGSI/main/bin/setup.sh
               sudo bash setup.sh
        
        - name: Download Stock Rom & Generate GSI
@@ -54,7 +55,7 @@ jobs:
               mkdir final
               zip -r final/GSI.zip ./*
        
-       - name: Upload GSI to BitSend
+       - name: Upload GSI to WeTransfer
          run: |
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
               curl -sL https://git.io/file-transfer | sh
