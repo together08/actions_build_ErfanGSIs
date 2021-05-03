@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/20.4.27/miui_MIMIX3_20.4.27_8f7879221b_10.0.zip
+  ROM_URL: https://bigota.d.miui.com/V7.5.1.0.KHHCNDE/miui_HM1SLTE_V7.5.1.0.KHHCNDE_2f8a0c0a7f_4.4.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
