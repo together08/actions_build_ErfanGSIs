@@ -39,7 +39,7 @@ jobs:
               sed -i 's/\|\| exit 1//g' $GITHUB_WORKSPACE/ErfanGSIs/url2GSI.sh
               sed -i 's/exit 1//g' $GITHUB_WORKSPACE/ErfanGSIs/url2GSI.sh
        
-       - name: Setting up ErfanGSI requirements with new setup script
+       - name: Setting up ErfanGSI requirements with XiaoxinSGSI setup script
          run: |
               cd $GITHUB_WORKSPACE/ErfanGSIs
               mkdir ./output
@@ -50,7 +50,7 @@ jobs:
        - name: Download Stock Rom & Generate GSI
          run: |
              cd $GITHUB_WORKSPACE/ErfanGSIs
-             sudo ./ErfanGSIs/url2GSI.sh -c -b $ROM_URL $ROM_NAME
+             sudo bash ./url2GSI.sh -c -b $ROM_URL $ROM_NAME
        
        - name: Zip GSI  
          run: |
