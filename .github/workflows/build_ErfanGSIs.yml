@@ -45,7 +45,7 @@ jobs:
               mkdir ./output
               git clone https://github.com/xiaoxindada/actions_build_SGSI.git setupp
               cd setupp/bin
-              sudo ./setup.sh
+              sudo bash ./setup.sh
               
        - name: Download Stock Rom & Generate GSI
          run: |
