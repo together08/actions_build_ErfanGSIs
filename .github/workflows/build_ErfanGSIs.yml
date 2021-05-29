@@ -39,15 +39,18 @@ jobs:
               sed -i 's/\|\| exit 1//g' $GITHUB_WORKSPACE/ErfanGSIs/url2GSI.sh
               sed -i 's/exit 1//g' $GITHUB_WORKSPACE/ErfanGSIs/url2GSI.sh
        
-       - name: Setting up ErfanGSI requirements with Xiaoxin script
+       - name: Setting up ErfanGSI requirements with new setup script
          run: |
-              cd ErfanGSIs
+              cd $GITHUB_WORKSPACE/ErfanGSIs
               mkdir ./output
-              wget https://raw.githubusercontent.com/TimeMapleLing/actions_build_SGSI/main/bin/setup.sh -o $GITHUB_WORKSPACE/ErfanGSIs/setup-xiaoxin.sh
-              sudo bash $GITHUB_WORKSPACE/ErfanGSIs/setup-xiaoxin.sh
-       
+              git clone https://github.com/xiaoxindada/actions_build_SGSI.git setupp
+              cd setupp/bin
+              sudo ./setup.sh
+              
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/url2GSI.sh -c -b $ROM_URL $ROM_NAME
+         run: |
+             cd $GITHUB_WORKSPACE/ErfanGSIs
+             sudo ./ErfanGSIs/url2GSI.sh -c -b $ROM_URL $ROM_NAME
        
        - name: Zip GSI  
          run: |
