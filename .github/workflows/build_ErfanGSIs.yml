@@ -62,7 +62,7 @@ jobs:
          run: |
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
               curl -sL https://git.io/file-transfer | sh
-              ./transfer arp ./final/GSI.7z
+              ./transfer flags ./final/GSI.7z
 
          
             
