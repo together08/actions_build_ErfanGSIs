@@ -63,5 +63,5 @@ jobs:
               chmod +x $GITHUB_WORKSPACE/actions_build_ErfanGSIs/Upload/OneDriveUploader
               chmod +x $GITHUB_WORKSPACE/actions_build_ErfanGSIs/Upload/auth.json
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
-              OneDriveUploader -c $GITHUB_WORKSPACE/actions_build_ErfanGSIs/Upload/auth.json -s "final"
+              OneDriveUploader -c $GITHUB_WORKSPACE/Upload/OneDriveUploader -s "final"
             
