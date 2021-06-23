@@ -60,8 +60,8 @@ jobs:
               du -sh final/GSI.7z
        - name: 上传到onedrive
          run: |
-              chmod +x $GITHUB_WORKSPACE/actions_build_ErfanGSIs/Upload/OneDriveUploader
-              chmod +x $GITHUB_WORKSPACE/actions_build_ErfanGSIs/Upload/auth.json
-              cd $GITHUB_WORKSPACE/ErfanGSIs/output
-              OneDriveUploader -c $GITHUB_WORKSPACE/Upload/OneDriveUploader -s "final"
-            
+              mkdir 上传
+              wget https://raw.githubusercontent.com/MoeClub/OneList/master/OneDriveUploader/amd64/linux/OneDriveUploader -P $GITHUB_WORKSPACE/上传
+              chmod +x $GITHUB_WORKSPACE/上传
+              OneDriveUploader -a "http://localhost/onedrive-login?code=0.AT4AgpEeaEEt20aiJdnUZhF32jXc1HhGfsZCkCMtOTFEM6U-ACU.AQABAAIAAAD--DLA3VO7QrddgJg7WevrC47wry45iqZLEoAoArrltoZJkiznMVKKUFBW0J5f4D4a1_jxC8J1uCKFd-Xwwbj1Kq-ds4rT6V9lJgUv--ovbllAUJk0TeYsNzK8azOk5XkO-yHheoGu9h8U0rENaNaL1Din7JmGT00ynqtwmgakHluH-8QqwWH40izO340teHxlBSGoQgiLWlbix_sYMQWrsN3KSa0kWrS2iNW83tY2DlOADHyALmc3WKC6XTXVQIt2BZI5_XKTt8BTmQuDquOsrtgWPzHuDh_jVDGpbFP2u2sgTXDO9p_IiDjOlUk-NSW9NbSDoDnEEMl2pR9tirLtuHTu1DJQgy7t7UohLwG-X2ye6BO1HvGcl0hLTAUGIzQuO5pHWZMr8fL5WziZNqaaGAYD8aK0U6Hpu5zDFquHDBskswp-dlqTikFNiP4dMu3pRwJntZjqx_oaXGz8-B_X76DhyFJ_7cD1beJdUyJtG5uyfPW3am73ie2H81U6oF69R_79u0fWwzgfW-YlWfGn7e1tXne7d8oevg4QZckaJ7PK_1WbF_uaVo3HmQ8NNX2Kw201TjPaArbNDPZnoFWQcKgCIwkCo4NCB52wqkgULPrgIYDx3d72xkhVjRoZjpRhSjIuncPcbohW1rbz0VJKIAA&session_state=28132b5c-5143-4277-90bc-e8a5d52f4f4a"
+              
