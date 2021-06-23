@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: OnePlus5THydrogen_43_OTA_065_all_2012030405_03dba2c095454647.zip
+  ROM_URL: http://download.h2os.com/5T/MP/OnePlus5THydrogen_43_OTA_065_all_2012030405_03dba2c095454647.zip
   ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
