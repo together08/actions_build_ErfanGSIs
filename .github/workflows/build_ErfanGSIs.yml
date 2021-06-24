@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://wlansysupwrrdl.vivo.com.cn/upgrade/recovery/recoveryFiles/20210313000632e732c366f999e2a134b2f6ca5b16df64.zip
-  ROM_NAME: Generic
+  ROM_URL: http://download.h2os.com/OnePlus6/MP/OnePlus6Hydrogen_22.K.51_OTA_051_all_2105262251_6fed6a93c6c54103.zip
+  ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
 jobs:
