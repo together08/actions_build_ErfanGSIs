@@ -63,12 +63,12 @@ jobs:
          run: curl https://rclone.org/install.sh | sudo bash
 
        - name: Unzip config #解压配置文件
-        run: |
+         run: |
          mkdir -p ~/.config/rclone/
          unzip -P ${{ secrets.PASSWD }} rclone.zip -d ~/.config/rclone/
 
        - name: Run rclone #运行rclone
-        run: |
+         run: |
           
           # 更改时区
 
