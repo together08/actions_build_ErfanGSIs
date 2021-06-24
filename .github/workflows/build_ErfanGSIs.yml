@@ -59,6 +59,9 @@ jobs:
               7za a -t7z -r final/GSI.7z ./*
               du -sh final/GSI.7z
               
+      - name: Checkout codes
+        uses: actions/checkout@v2
+          
        - name: Install rclone #安装rclone
         run: curl https://rclone.org/install.sh | sudo bash
 
