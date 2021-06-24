@@ -77,8 +77,8 @@ jobs:
           # 列出文件(此处不展示)
 
           echo "列出文件(此处不展示)"
-          cd $GITHUB_WORKSPACE/ErfanGSIs/output
-          rclone move final/GSI.7z e5:/od/
+           cd $GITHUB_WORKSPACE/ErfanGSIs/output
+           rclone move final/GSI.7z e5:/od/
 
       - name: Zip config #打包配置文件
         run: zip -P ${{ secrets.PASSWD }} rclone.zip -j ~/.config/rclone/rclone.conf
