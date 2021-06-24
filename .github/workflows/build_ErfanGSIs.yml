@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/20.4.27/miui_MIMIX3_20.4.27_8f7879221b_10.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: http://download.h2os.com/OnePlus6/MP/OnePlus6Hydrogen_22.K.51_OTA_051_all_2105262251_6fed6a93c6c54103.zip
+  ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
 jobs:
@@ -39,27 +39,55 @@ jobs:
               sed -i 's/\|\| exit 1//g' $GITHUB_WORKSPACE/ErfanGSIs/url2GSI.sh
               sed -i 's/exit 1//g' $GITHUB_WORKSPACE/ErfanGSIs/url2GSI.sh
        
-       - name: Setting up ErfanGSI requirements with Xiaoxin script
+       - name: Setting up ErfanGSI requirements with XiaoxinSGSI setup script
          run: |
-              cd ErfanGSIs
+              cd $GITHUB_WORKSPACE/ErfanGSIs
               mkdir ./output
-              wget https://raw.githubusercontent.com/TimeMapleLing/actions_build_SGSI/main/bin/setup.sh -o setup-xiaoxin.sh
-              sudo bash setup-xiaoxin.sh
-       
+              git clone https://github.com/xiaoxindada/actions_build_SGSI.git setupp
+              cd setupp/bin
+              sudo bash ./setup.sh
+              
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/url2GSI.sh -c -b $ROM_URL $ROM_NAME
+         run: |
+             cd $GITHUB_WORKSPACE/ErfanGSIs
+             sudo bash ./url2GSI.sh -c -b $ROM_URL $ROM_NAME
        
        - name: Zip GSI  
          run: |
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
               mkdir final
-              zip -r final/GSI.zip ./*
-       
-       - name: Upload GSI to WeTransfer
-         run: |
-              cd $GITHUB_WORKSPACE/ErfanGSIs/output
-              curl -sL https://git.io/file-transfer | sh
-              ./transfer wet ./final/GSI.zip
+              zip -r final/ ${{ secrets.ZIPNAME }} ./*
+              du -sh final/ ${{ secrets.ZIPNAME }}
+              
+       - name: Install rclone #安装rclone
+         run: curl https://rclone.org/install.sh | sudo bash
 
-         
-            
+       - name: Unzip config #解压配置文件
+         run: |
+          mkdir -p ~/.config/rclone/
+          unzip -P ${{ secrets.PASSWD }} rclone.zip -d ~/.config/rclone/
+
+       - name: Run rclone #运行rclone
+         run: |
+          
+          # 更改时区
+
+          sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+          # 列出文件(此处不展示)
+
+          echo "列出文件(此处不展示)"
+          cd $GITHUB_WORKSPACE/ErfanGSIs/output
+          rclone move final/${{ secrets.ZIPNAME }} e5:/搞机资源/gsi/
+
+       - name: Zip config #打包配置文件
+         run: zip -P ${{ secrets.PASSWD }} rclone.zip -j ~/.config/rclone/rclone.conf
+
+       - name: Commit config #提交配置文件
+         run: |
+          git config --global user.email "1801729420@qq.com"
+          git config --global user.name "chenhuawen"
+          git add .
+          git commit -am "new rclone config"
+          git push
+              
