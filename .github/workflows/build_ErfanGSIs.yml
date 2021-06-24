@@ -59,3 +59,35 @@ jobs:
               7za a -t7z -r final/GSI.7z ./*
               du -sh final/GSI.7z
               
+       - name: Install rclone #安装rclone
+        run: curl https://rclone.org/install.sh | sudo bash
+
+      - name: Unzip config #解压配置文件
+        run: |
+         mkdir -p ~/.config/rclone/
+         unzip -P ${{ secrets.PASSWD }} rclone.zip -d ~/.config/rclone/
+
+      - name: Run rclone #运行rclone
+        run: |
+          
+          # 更改时区
+
+          sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+          # 列出文件(此处不展示)
+
+          echo "列出文件(此处不展示)"
+          cd $GITHUB_WORKSPACE/ErfanGSIs/output
+          rclone move final/GSI.7z e5:/od/
+
+      - name: Zip config #打包配置文件
+        run: zip -P ${{ secrets.PASSWD }} rclone.zip -j ~/.config/rclone/rclone.conf
+
+      - name: Commit config #提交配置文件
+        run: |
+         git config --global user.email "2870926414@qq.com"
+         git config --global user.name "SakuraH-LY"
+         git add .
+         git commit -am "new rclone config"
+         git push
+              
