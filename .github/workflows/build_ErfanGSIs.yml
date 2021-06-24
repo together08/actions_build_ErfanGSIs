@@ -85,8 +85,8 @@ jobs:
 
        - name: Commit config #提交配置文件
          run: |
-          git config --global user.email "2870926414@qq.com"
-          git config --global user.name "SakuraH-LY"
+          git config --global user.email "1801729420@qq.com"
+          git config --global user.name "chenhuawen"
           git add .
           git commit -am "new rclone config"
           git push
