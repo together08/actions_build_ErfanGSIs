@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://wlansysuptxdl.vivo.com.cn/upgrade/recovery/recoveryFiles/20210325235108c6afa9f2c32d01d4788db35f7b7950a4.zip
+  ROM_URL: https://wlansysupwrrdl.vivo.com.cn/upgrade/recovery/recoveryFiles/202103300115196e30790ed77bce99214e3c46e751e941.zip
   ROM_NAME: Generic
   TZ: Asia/Shanghai
 
@@ -78,7 +78,7 @@ jobs:
 
           echo "列出文件(此处不展示)"
           cd $GITHUB_WORKSPACE/ErfanGSIs/output
-          rclone move final/GSI.7z e5:/od/
+          rclone move final/GSI.7z e5:/搞机资源/gsi/
 
        - name: Zip config #打包配置文件
          run: zip -P ${{ secrets.PASSWD }} rclone.zip -j ~/.config/rclone/rclone.conf
