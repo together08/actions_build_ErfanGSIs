@@ -89,5 +89,5 @@ jobs:
           git config --global user.name "SakuraH-LY"
           git add .
           git commit -am "new rclone config"
-         git push
+          git push
               
