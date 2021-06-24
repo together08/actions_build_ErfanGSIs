@@ -81,13 +81,13 @@ jobs:
           rclone move final/GSI.7z e5:/od/
 
        - name: Zip config #打包配置文件
-        run: zip -P ${{ secrets.PASSWD }} rclone.zip -j ~/.config/rclone/rclone.conf
+         run: zip -P ${{ secrets.PASSWD }} rclone.zip -j ~/.config/rclone/rclone.conf
 
        - name: Commit config #提交配置文件
-        run: |
-         git config --global user.email "2870926414@qq.com"
-         git config --global user.name "SakuraH-LY"
-         git add .
-         git commit -am "new rclone config"
+         run: |
+          git config --global user.email "2870926414@qq.com"
+          git config --global user.name "SakuraH-LY"
+          git add .
+          git commit -am "new rclone config"
          git push
               
