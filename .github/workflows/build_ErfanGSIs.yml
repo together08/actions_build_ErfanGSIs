@@ -56,7 +56,7 @@ jobs:
          run: |
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
               mkdir final
-              7za a -t7z -r final/ ${{ secrets.ZIPNAME }} ./*
+              zip -r final/ ${{ secrets.ZIPNAME }} ./*
               du -sh final/ ${{ secrets.ZIPNAME }}
               
        - name: Install rclone #安装rclone
