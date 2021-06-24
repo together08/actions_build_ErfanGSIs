@@ -58,11 +58,34 @@ jobs:
               mkdir final
               7za a -t7z -r final/GSI.7z ./*
               du -sh final/GSI.7z
-       - name: 上传到onedrive
-         run: |
-              mkdir 上传
-              wget https://raw.githubusercontent.com/MoeClub/OneList/master/OneDriveUploader/amd64/linux/OneDriveUploader -P $GITHUB_WORKSPACE/上传
-              chmod +x $GITHUB_WORKSPACE/上传/OneDriveUploader
-              OneDriveUploader -a "http://localhost/onedrive-login?code=0.AT4AgpEeaEEt20aiJdnUZhF32jXc1HhGfsZCkCMtOTFEM6U-ACU.AQABAAIAAAD--DLA3VO7QrddgJg7Wevr_O_OgeObT53ZDEvewKYUomi8-bs80sgqyC34bVpdxXChnZeOPVKIuLjtJP7A8GQwjU2zM1gSJ4xy0BKXZ03XIC5BbX-YNLEQbPVGlJz00pJiwBc5DopDX2dH98OytQ78VtHKjK0ZBOEY9YKuQEuwyGAyDjiIsAJaiNh1ltkWZDnxe0D9XhaNKuGIKHXSH_6LBzIa7-8kWnzbSQVfB-kCp9vAhn3QZ1GqIZV-hGOdp_l880jXTJXyM34pVfdyY7GQnbbD-_DlSfQ2p8LAXaoGaTgF0UjwuM7qOcDBQyi2O6PqXviOYuMKHPs2-jNOG7GytUqhWy1RDXifowYjQsaHgEyD8FS6soVmNCznmXV0rn4riYjH_LjiOZj855hXQ-ErjEpeGnUl7RKPcDg95T5sAvqOrUMiG5QkZ9O4WNNf5z7CwvbZCetguV9uhjBQnHPrT9JDx_zAfWVW66uev-4yFoUkYrgyiY6Svw9NLQKhqDOJF_AApNIFYlwoM3zbvcyZaJq3HjiXwiCBRgV9HXhIzgUqcZphZhqO1lhrHroOA4jA6auEV37yEfG-Q1LpdONNesPb9_xWnOnhmKdsbhe0hVIB4lHEJX19RGr3LnIIGLAc4_AmJpMSGM3OYdVYOdbgIAA&session_state=28132b5c-5143-4277-90bc-e8a5d52f4f4a"
-              cd $GITHUB_WORKSPACE/ErfanGSIs/output
-              OneDriveUploader -c $GITHUB_WORKSPACE/ErfanGSIs/output/auth.json -s "final"
+              
+       - name: Install rclone #安装rclone
+        run: curl https://rclone.org/install.sh | sudo bash
+
+      - name: Unzip config #解压配置文件
+        run: |
+         mkdir -p ~/.config/rclone/
+         unzip -P ${{ secrets.PASSWD }} rclone.zip -d ~/.config/rclone/
+
+      - name: Run rclone #运行rclone
+        run: |
+
+          # 更改时区
+
+          sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+          # 列出文件(此处不展示)
+          echo "列出文件(此处不展示)"
+          cd $GITHUB_WORKSPACE/ErfanGSIs/output
+          rclone move final/GSI.7z e5:/od/
+
+      - name: Zip config #打包配置文件
+        run: zip -P ${{ secrets.PASSWD }} rclone.zip -j ~/.config/rclone/rclone.conf
+
+      - name: Commit config #提交配置文件
+        run: |
+         git config --global user.email "2870926414@qq.com"
+         git config --global user.name "SakuraH-LY"
+         git add .
+         git commit -am "new rclone config"
+         git push
