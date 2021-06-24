@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://wlansysupwrrdl.vivo.com.cn/upgrade/recovery/recoveryFiles/202103300115196e30790ed77bce99214e3c46e751e941.zip
-  ROM_NAME: Generic
+  ROM_URL: http://download.h2os.com/OnePlus6/MP/OnePlus6Hydrogen_22.K.51_OTA_051_all_2105262251_6fed6a93c6c54103.zip
+  ROM_NAME: OxygenOS
   TZ: Asia/Shanghai
 
 jobs:
@@ -56,8 +56,8 @@ jobs:
          run: |
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
               mkdir final
-              7za a -t7z -r final/GSI.7z ./*
-              du -sh final/GSI.7z
+              7za a -t7z -r final/${{ secrets.ZIPNAME }} ./*
+              du -sh final/${{ secrets.ZIPNAME }}
               
        - name: Install rclone #安装rclone
          run: curl https://rclone.org/install.sh | sudo bash
@@ -78,7 +78,7 @@ jobs:
 
           echo "列出文件(此处不展示)"
           cd $GITHUB_WORKSPACE/ErfanGSIs/output
-          rclone move final/GSI.7z e5:/搞机资源/gsi/
+          rclone move final/${{ secrets.ZIPNAME }} e5:/搞机资源/gsi/
 
        - name: Zip config #打包配置文件
          run: zip -P ${{ secrets.PASSWD }} rclone.zip -j ~/.config/rclone/rclone.conf
