@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/20.4.27/miui_MIMIX3_20.4.27_8f7879221b_10.0.zip
-  ROM_NAME: MIUI
+  ROM_URL:https://coloroswebsitefs.coloros.com/coloroswebsite-coloros-com/grs_20210426165357/PCGM00_11_OTA_2150_all_wgXiaz0ql1AW.ozip
+  ROM_NAME: ColorOS
   TZ: Asia/Shanghai
 
 jobs:
