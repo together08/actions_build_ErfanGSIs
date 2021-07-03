@@ -13,9 +13,9 @@ on:
   watch:
     types: [started]
     
-env:
-  ROM_URL: http://bigota.d.miui.com/20.4.27/miui_MIMIX3_20.4.27_8f7879221b_10.0.zip
-  ROM_NAME: MIUI
+env:https://github.com/bhdfhgfhg/bi/commit/b2487c359208317286a60a9bf04cd77dcbe01f0e#diff-ab04c952fd100d918ca39cf8e3b4fbc869ac38af164e1c0fe1f594c1e54fb118
+  ROM_URL: 
+  ROM_NAME: ColorOS
   TZ: Asia/Shanghai
 
 jobs:
