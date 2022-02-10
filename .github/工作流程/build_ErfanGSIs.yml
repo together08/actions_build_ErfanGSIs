@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/OnePlus9Pro/MP/LE2120_11_A_OTA_0090_all_bef835_10010111.zip
-  ROM_NAME: OxygenOS
+  ROM_URL: https://bigota.d.miui.com/V13.0.6.0.SKBCNXM/miui_VENUS_V13.0.6.0.SKBCNXM_176af7a83a_12.0.zip
+  ROM_NAME: MIUI
   BUILD_TYPE: ab
   TZ: Asia/Shanghai
 
