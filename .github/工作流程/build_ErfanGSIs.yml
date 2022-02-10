@@ -47,10 +47,10 @@ jobs:
               sudo bash ./setup.sh
        
        - name: Download Stock Rom & Generate GSI
-         run: sudo bash ./ErfanGSIs/ur12GSI.sh -c --$BUILD_TYPE $ROM_URL $ROM_NAME
+         run: |
        
        - name: Zip GSI  
-         run: |
+         run: |sudo bash ./ErfanGSIs/ur12GSI.sh -c --$BUILD_TYPE $ROM_URL $ROM_NAME
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
               mkdir final
               zip -r final/GSI.zip ./*
