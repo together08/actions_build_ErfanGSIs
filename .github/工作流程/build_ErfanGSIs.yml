@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V13.0.6.0.SKBCNXM/miui_VENUS_V13.0.6.0.SKBCNXM_176af7a83a_12.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: http://download.h2os.com/OnePlus8Pro/MP/OnePlus8ProHydrogen_15.H.44_OTA_0440_all_2112090003_05ae96bfd40e4fb3.zip
+  ROM_NAME: OxygenOS
   BUILD_TYPE: ab
   TZ: Asia/Shanghai
 
