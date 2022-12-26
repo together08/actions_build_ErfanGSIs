@@ -1,4 +1,4 @@
-name: build_ErfanGSIs
+name: build_ErfanGSIsSS
 
 on:
 #  release:
@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/20.4.27/miui_MIMIX3_20.4.27_8f7879221b_10.0.zip
+  ROM_URL: https://bigota.d.miui.com/8.4.26/miui_MIPAD2_8.4.26_04142568fe_5.1.zip
   ROM_NAME: MIUI
   BUILD_TYPE: ab
   TZ: Asia/Shanghai
